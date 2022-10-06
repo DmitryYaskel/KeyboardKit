@@ -33,7 +33,11 @@ extension UITextDocumentProxy {
     func deleteBackwardText(for range: DeleteBackwardRange) -> String? {
         guard let text = documentContextBeforeInput else { return nil }
         switch range {
-        case .char: return text.lastCharacter
+        case .char:
+            if #available(iOS 16.0, *) {
+                return text.lastCharacter
+            }
+            return nil
         case .sentence: return text.lastSentenceSegment
         case .word: return text.lastWordSegment
         }
