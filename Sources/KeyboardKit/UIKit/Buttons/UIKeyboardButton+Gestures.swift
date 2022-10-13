@@ -74,7 +74,7 @@ private extension KeyboardInputViewController {
     
     func handleTap(_ gesture: UIGestureRecognizer) {
         handle(.tap, on: gesture.view)
-        (gesture.view as? UIKeyboardButton)?.animateStandardTap()
+//        (gesture.view as? UIKeyboardButton)?.animateStandardTap()
     }
 }
 
